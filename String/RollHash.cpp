@@ -1,4 +1,4 @@
-// Find sub in str.
+// Find the first location where sub appears in str.
 int rollhash(string& str, string& sub) {
     const int X = 1e6 + 99, MOD = 1e9 + 9;
     ll xx = 1;

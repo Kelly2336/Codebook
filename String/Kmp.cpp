@@ -10,7 +10,7 @@ int* kmp_fail(string& s) {
     return f;
 }
 
-// Find count sub appears in str
+// Find the counts sub appears in str
 int kmp_count(string& str, string& sub) {
     int* fail = kmp_fail(sub);
     int p = -1, ret = 0;
@@ -23,7 +23,7 @@ int kmp_count(string& str, string& sub) {
     return ret;
 }
 
-// Find the first time sub appears in str
+// Find the first location where sub appears in str
 int kmp(string& str, string& sub) {
     int* fail = kmp_fail(sub);
     int i, j = 0;
