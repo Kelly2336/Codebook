@@ -1,4 +1,4 @@
-// Query phi(x)
+// Queries phi(x) value.
 int phi(int x) {
     int ret = x;
     for (int p = 2; p * p <= x; ++p) {
@@ -11,16 +11,16 @@ int phi(int x) {
     return ret;
 }
 
-// Query all phi(x) where x in [0, x)
-vector<int> phi_in(int x) {
-    vector<bool> prime(x, 1);
-    vector<int> ret(x);
+// Queries all phi(x) values where x in [0, n).
+vector<int> phi_in(int n) {
+    vector<bool> prime(n, 1);
+    vector<int> ret(n);
     prime[0] = prime[1] = false;
-    for (int i = 0; i < x; i++) ret[i] = i;
-    for (int i = 2; i < x; i++) {
+    for (int i = 0; i < n; i++) ret[i] = i;
+    for (int i = 2; i < n; i++) {
         if (!prime[i]) continue;
         ret[i]--;
-        for (int j = i * 2; j < x; j += i) {
+        for (int j = i * 2; j < n; j += i) {
             prime[j] = false;
             ret[j] = ret[j] / i * (i - 1);
         }

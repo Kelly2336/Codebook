@@ -1,4 +1,4 @@
-// Find mininum path from src to dest.
+// Queries mininum path from src to dest in a graph where src and dest are connected.
 int dijkstra(int src, int dest, const vector<vector<pii>>& edge) {
     const int N = edge.size();
     bool vis[N] = {0};
@@ -19,10 +19,10 @@ int dijkstra(int src, int dest, const vector<vector<pii>>& edge) {
             }
         }
     }
-    throw "Source and destination are not connected.";
+    throw "src and dest are not connected.";
 }
 
-// Find minuimum path from src to all the other vertices.
+// Queries minuimum path from src to all the other vertices in a graph where all vertices are connected.
 vector<int> dijkstra(int src, const vector<vector<pii>>& edge) {
     const int N = edge.size();
     vector<int> mindist(N, -1);

@@ -1,4 +1,4 @@
-// Find x such that (ax = 1) mod m
+// Queries value x such that (ax == 1) mod m
 ll modinv(ll a, ll m) {
     if (m == 1) return 0;
     ll m0 = m, y = 0, x = 1;

@@ -1,4 +1,4 @@
-// Find minimum path of spanning tree using prim algo.
+// Queries minimum path of spanning tree of a graph, where all vertices are connected, using prim algo.
 int minpath(const vector<vector<pii>>& edge) {
     const int N = edge.size();
     bool vis[N] = {0};
