@@ -6,7 +6,7 @@
 - [x] SP - Bellman-Ford（Luke）
 - [x] SP - SPFA（Luke）
 - [x] MST - Prim（Luke）
-- [x] MST - Kruskal
+- [x] MST - Kruskal (Luke)
 - [ ] TreeDiameter
 - [ ] Tarjan
 - [ ] LCS
@@ -23,6 +23,7 @@
 - [ ] Min cost flow
 - [ ] KM
 ### String
+- [x] Rolling Hash (Hyperbola)
 - [x] Trie（Luke）
 - [ ] AC自動機
 - [x] KMP（Luke）
