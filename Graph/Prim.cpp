@@ -20,5 +20,5 @@ int minpath(const vector<vector<pii>>& edge) {
             if (!vis[e.second]) q.emplace(d + e.first, e.second);
         }
     }
-    throw "Never reach here.";
+    throw "Never reaches here.";
 }

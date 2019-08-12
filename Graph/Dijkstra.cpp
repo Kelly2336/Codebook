@@ -4,7 +4,7 @@ int dijkstra(int src, int dest, const vector<vector<pii>>& edge) {
     bool vis[N] = {0};
     // A comparator may be required.
     priority_queue<pii, vector<pii>, greater<pii>> q;
-    q.push(make_pair(0, src));
+    q.emplace(0, src);
     while (!q.empty()) {
         int v = q.top().second;
         int d = q.top().first;
@@ -15,11 +15,11 @@ int dijkstra(int src, int dest, const vector<vector<pii>>& edge) {
         for (auto& e : edge[v]) {
             if (!vis[e.second]) {
                 // Fit the comparator
-                q.push(make_pair(d + e.first, e.second));
+                q.emplace(d + e.first, e.second);
             }
         }
     }
-    throw "Never happens.";
+    throw "Source and destination are not connected.";
 }
 
 // Find minuimum path from src to all the other vertices.
@@ -29,8 +29,9 @@ vector<int> dijkstra(int src, const vector<vector<pii>>& edge) {
     int vis = 0;
     // A comparator may be required.
     priority_queue<pii, vector<pii>, greater<pii>> q;
-    q.push(make_pair(0, src));
+    q.emplace(0, src);
     while (vis < N) {
+        if (q.empty()) throw "Not all vertices connected.";
         int v = q.top().second;
         int d = q.top().first;
         q.pop();
@@ -40,7 +41,7 @@ vector<int> dijkstra(int src, const vector<vector<pii>>& edge) {
         for (auto& e : edge[v]) {
             if (mindist[e.second] == -1) {
                 // Fit the comparator
-                q.push(make_pair(d + e.first, e.second));
+                q.emplace(d + e.first, e.second);
             }
         }
     }
