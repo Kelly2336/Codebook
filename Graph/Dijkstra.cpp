@@ -1,9 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
-typedef long long ll;
-typedef pair<int, int> pii;
-
-// Find the mininum path from src to dest.
+// Find mininum path from src to dest.
 int dijkstra(int src, int dest, const vector<vector<pii>>& edge) {
     const int N = edge.size();
     bool vis[N] = {0};
@@ -27,7 +22,7 @@ int dijkstra(int src, int dest, const vector<vector<pii>>& edge) {
     throw "Never happens.";
 }
 
-// Find the minuimum path from src to all the other vertices.
+// Find minuimum path from src to all the other vertices.
 vector<int> dijkstra(int src, const vector<vector<pii>>& edge) {
     const int N = edge.size();
     vector<int> mindist(N, -1);
