@@ -1,6 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef pair<int, int> pii;
+
 // Find the mininum path from src to dest.
 int dijkstra(int src, int dest, const vector<vector<pii>>& edge) {
-    vector<bool> vis(edge.size(), 0);
+    const int N = edge.size();
+    bool vis[N] = {0};
     // A comparator may be required.
     priority_queue<pii, vector<pii>, greater<pii>> q;
     q.push(make_pair(0, src));
@@ -23,12 +29,13 @@ int dijkstra(int src, int dest, const vector<vector<pii>>& edge) {
 
 // Find the minuimum path from src to all the other vertices.
 vector<int> dijkstra(int src, const vector<vector<pii>>& edge) {
-    vector<int> mindist(edge.size(), -1);
+    const int N = edge.size();
+    vector<int> mindist(N, -1);
     int vis = 0;
     // A comparator may be required.
     priority_queue<pii, vector<pii>, greater<pii>> q;
     q.push(make_pair(0, src));
-    while (vis < edge.size()) {
+    while (vis < N) {
         int v = q.top().second;
         int d = q.top().first;
         q.pop();
